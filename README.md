@@ -13,7 +13,7 @@ A simple way to dynamically create when rules - A great example how to use the n
 
 Simplicity is elegance.
 
-What we need is a descriptive way to tag Biz(i)ness Rules and catalog, inventory, usage, and change dynamically.
+What we need is a descriptive way to tag Biz(i)ness Rules and catalog, inventory, usage, and change rules dynamically.
 Javascript provides a simple way of dynamically creating functions on the fly.
 
 
