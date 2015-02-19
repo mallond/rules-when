@@ -14,24 +14,21 @@ A simple way to dynamically create when rules - A great example how to use the n
 
 Simplicity is elegance.
 
+What we need is a descriptive way to tag Biz(i)ness Rules and catalog, inventory, usage, and change dynamically.
+Javascript provides a simple way of dynamically creating functions on the fly.
+
+
 Prime directives, and ables ...
-- Stateless
-- Simple input, output, and process
-- Asynchronous non-blocking invocations
-- Rules to be self contained and serializable to a database (persistable)
-- Rules to be versioned (versionable)
-- Rules to be inventoried and stored in a library (sharable)
-- Rules can be modified on-the-fly (adaptable)
-- Rules can be unit tested independently (testable)
+- Easy to understand the code
+- Thin
+- Self documenting
+- Pattern - not an enforcement
 - Crazy fast
 
 
 ## Dependencies
 
--  Underscore.js for Mapreduce Decision Tables
--  Async.js for asynchronous hooks and behavior
 -  Mocha.js for for test infecting the code (good infection)
--  Require.js for the module loader
 
 ## A few Use Cases for Usage
 
@@ -53,4 +50,60 @@ Prime directives, and ables ...
 - Chainable
 - Micro foot print and scalable
 
-## Design - IPO (Input Process Output)
+## Example Setup
+
+```
+
+//Example Setup
+
+var when = {
+
+    isPerson: "return object.isPerson === true //Comment",
+    hasLicense: "return object.license === true //Comment",
+    isPersonAndHasLicense: "return when['isPerson'](object) && when['hasLicense'](object)",
+    payTax: "return object.payTax === true",
+    doHula: "return when['isPerson'](object) && when['hasLicense'](object) && when['payTax'](object)"
+
+}
+
+var calculate = {
+
+    adder: "return object.a + object.b //Comment",
+    calculateTax: "return object.amount * 1.8",
+    addTax: "if (when['payTax'](object)) {return calculate['calculateTax'](object)}; return 0",
+    mutate: "object.tada = 'hello Moto'; return true"
+
+}
+
+//Describe Decision Table
+var decisionTable = {
+
+    calcNumber: [["return when['isPerson'](object)", "return calculate['adder'](object)", "return true"],
+        ["return when['isPerson'](object)", "return calculate['calculateTax'](object)", "return true"],
+        ["return when['isPerson'](object)", "return calculate['calculateTax'](object)", "return true"]
+    ]
+
+}
+
+```
+
+## Example Run
+
+```
+rules.loadWhenRules(when);
+rules.loadCalcualtions(calculate);
+rules.loadDecisionTable(decisionTable);
+
+var person = {isPerson: true, license: true, a: 5, b: 10, amount: 500, payTax: true};
+
+console.log("isPerson:" + rules.when('isPerson', person));
+console.log("hasLicense:" + rules.when('hasLicense', person));
+console.log("adder:" + rules.calculate('adder', person));
+console.log("addTax:" + rules.calculate("addTax", person));
+console.log("isPersonAndHasLicense:" + rules.when('isPersonAndHasLicense', person));
+rules.calculate('mutate',person);
+console.log(person.tada);
+console.log("decisiontable result:" + rules.decisionTable('calcNumber', person));
+console.log("doHula:" + rules.when('doHula',person));
+
+```
