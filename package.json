@@ -5,12 +5,31 @@
   "scripts": {
     "start": ""
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "requirejs": "~2.1.11",
     "async": "0.6.2",
-    "underscore":"1.6.0",
+    "underscore": "1.6.0",
     "mocha": "1.18.2"
-  }
+  },
+  "description": "Simple When Rule Construction",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mallond/rules-when.git"
+  },
+  "keywords": [
+    "bre",
+    "bpm",
+    "rules",
+    "engine",
+    "when",
+    "decision"
+  ],
+  "author": "= <mallond@gmail.com> (http://bizrez.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mallond/rules-when/issues"
+  },
+  "homepage": "https://github.com/mallond/rules-when"
 }
