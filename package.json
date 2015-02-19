@@ -1,0 +1,16 @@
+{
+  "name": "rules-when",
+  "version": "0.0.1",
+  "private": false,
+  "scripts": {
+    "start": ""
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "requirejs": "~2.1.11",
+    "async": "0.6.2",
+    "underscore":"1.6.0",
+    "mocha": "1.18.2"
+  }
+}

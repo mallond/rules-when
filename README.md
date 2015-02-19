@@ -107,3 +107,7 @@ console.log("decisiontable result:" + rules.decisionTable('calcNumber', person))
 console.log("doHula:" + rules.when('doHula',person));
 
 ```
+
+## Mocha Test
+
+mocha ./lib/test
