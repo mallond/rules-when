@@ -87,6 +87,7 @@ var decisionTable = {
 }
 
 ```
+---
 ### image 1
 
 Notice: function strings stored as strings. These strings will be translated via the new Function operation
@@ -96,6 +97,8 @@ Notice: function strings stored as strings. These strings will be translated via
 </div>
 <br>
 <br>
+
+---
 
 ### Translate value into functions
 ```
