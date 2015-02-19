@@ -1,7 +1,6 @@
 # rules-when
 Simple When Rule Construction
 
-[W I P Initial Feb 18th, 2015]
 
 
 ## BizRez When Rules
@@ -59,7 +58,7 @@ Prime directives, and ables ...
 
 var when = {
 
-    isPerson: "return object.isPerson === true //Comment",
+    isPerson: "return object.isPerson === true //Comment - Yes you can",
     hasLicense: "return object.license === true //Comment",
     isPersonAndHasLicense: "return when['isPerson'](object) && when['hasLicense'](object)",
     payTax: "return object.payTax === true",
@@ -134,7 +133,6 @@ console.log("hasLicense:" + rules.when('hasLicense', person));
 console.log("adder:" + rules.calculate('adder', person));
 console.log("addTax:" + rules.calculate("addTax", person));
 console.log("isPersonAndHasLicense:" + rules.when('isPersonAndHasLicense', person));
-rules.calculate('mutate',person);
 console.log(person.tada);
 console.log("decisiontable result:" + rules.decisionTable('calcNumber', person));
 console.log("doHula:" + rules.when('doHula',person));
