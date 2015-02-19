@@ -87,6 +87,9 @@ var decisionTable = {
 }
 
 ```
+<img src="http://lh5.googleusercontent.com/-as9raWNpgYg/VOZR7JqSRrI/AAAAAAAAIgY/BadKY8hUQ3s/w739-h303-no/WhenRule.png" align="right" width="200px" />
+
+
 
 ## Example Run
 
