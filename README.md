@@ -20,7 +20,7 @@ Javascript provides a simple way of dynamically creating functions on the fly.
 Prime directives, and ables ...
 - Easy to understand the code
 - Thin
-- Self documenting
+- Self-documenting
 - Pattern - not an enforcement
 - Crazy fast
 - Secure from XXS
