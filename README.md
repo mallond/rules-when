@@ -92,13 +92,9 @@ var decisionTable = {
 
 Notice: function strings stored as strings. These strings will be translated via the new Function operation
 
-<div>
-<img src="http://lh5.googleusercontent.com/-as9raWNpgYg/VOZR7JqSRrI/AAAAAAAAIgY/BadKY8hUQ3s/w739-h303-no/WhenRule.png" align="left" width="600px" />
-</div>
-<br>
-<br>
+![Image](http://lh5.googleusercontent.com/-as9raWNpgYg/VOZR7JqSRrI/AAAAAAAAIgY/BadKY8hUQ3s/w739-h303-no/WhenRule.png?raw=true)
 
----
+
 
 ### Translate value into functions
 ```
