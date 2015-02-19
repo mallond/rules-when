@@ -87,9 +87,35 @@ var decisionTable = {
 }
 
 ```
-<img src="http://lh5.googleusercontent.com/-as9raWNpgYg/VOZR7JqSRrI/AAAAAAAAIgY/BadKY8hUQ3s/w739-h303-no/WhenRule.png" align="left" width="800px" />
+## image 1
+
+Notice: function strings stored as strings. These strings will be translated via the new Function operation
+
+<img src="http://lh5.googleusercontent.com/-as9raWNpgYg/VOZR7JqSRrI/AAAAAAAAIgY/BadKY8hUQ3s/w739-h303-no/WhenRule.png" align="left" width="600px" />
 
 
+```
+        //Create When Condtion functions
+
+        function loadwhenConditions(when) {
+
+            //Convert key[value] into real functions
+            for (var key in when) {
+                when[key] = new Function('object', 'when', 'calculate', when[key]);
+            }
+
+        }
+
+        //Create Calculation functions
+        function loadCalcualtions(calculate) {
+            //Convert key[value] into real functions
+            for (var key in calculate) {
+                calculate[key] = new Function('object', 'when', 'calculate', calculate[key]);
+
+            }
+        }
+
+```
 
 ## Example Run
 
