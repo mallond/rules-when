@@ -24,6 +24,7 @@ Prime directives, and ables ...
 - Self documenting
 - Pattern - not an enforcement
 - Crazy fast
+- Secure from XXS
 
 
 ## Dependencies
