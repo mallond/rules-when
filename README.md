@@ -142,3 +142,6 @@ console.log("doHula:" + rules.when('doHula',person));
 ## Mocha Test
 
 mocha ./lib/test
+
+
+Key: BRE, Decision Table, When, Calculation, BPM Business Process Management
