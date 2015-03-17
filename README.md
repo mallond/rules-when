@@ -138,7 +138,28 @@ console.log("decisiontable result:" + rules.decisionTable('calcNumber', person))
 console.log("doHula:" + rules.when('doHula',person));
 
 ```
+## An alternative using the evil eval()
+```
+// From couchDB
+var input = {
+    id: "tax",
+    state: "tx",
+    rate: 7.15,
+    shows: {
+        adder: "function(input) {return input.rate * input.value;}",
+        detail: "function(detail){ alert(detail) }"
+    }
+};
 
+// Construct function with Closure
+var fullFunction = "(function () {var counter = 0; return " + input.shows.adder + "})()";
+
+// Construct function
+var ad = eval(fullFunction);
+
+var input = {rate:input.rate, value : 10000}
+console.log(ad(input));
+```
 ## Mocha Test
 
 mocha ./lib/test
