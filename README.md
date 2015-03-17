@@ -159,6 +159,26 @@ var ad = eval(fullFunction);
 
 var input = {rate:input.rate, value : 10000}
 console.log(ad(input));
+
+// "a thought" create JS Objects stringify load into CouchDB
+
+function objToString(obj, ndeep) {
+    switch(typeof obj){
+        case "string": return '"'+obj+'"';
+        case "function": return obj.name || obj.toString();
+        case "object":
+            var indent = Array(ndeep||1).join('\t'), isArray = Array.isArray(obj);
+            return ('{['[+isArray] + Object.keys(obj).map(function(key){
+                return '\n\t' + indent +(isArray?'': key + ': ' )+ objToString(obj[key], (ndeep||1)+1);
+            }).join(',') + '\n' + indent + '}]'[+isArray]).replace(/[\s\t\n]+(?=(?:[^\'"]*[\'"][^\'"]*[\'"])*[^\'"]*$)/g,'');
+        default: return obj.toString();
+    }
+}
+
+var test = {fx: function(a, b) {return a*b}};
+console.log(test.fx(5,5));
+console.log(objToString(test));
+
 ```
 ## Mocha Test
 
